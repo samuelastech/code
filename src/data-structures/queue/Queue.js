@@ -63,4 +63,5 @@ myQueue.dequeue()
 myQueue.dequeue()
 
 console.log('Size of the queue: ' + myQueue.getSize())
+console.log('Is the queue empty? ' + myQueue.isEmpty())
 console.log(myQueue.peek()) // Must throws an error
