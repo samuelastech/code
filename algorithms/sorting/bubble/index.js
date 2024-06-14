@@ -1,6 +1,5 @@
-const util = require("../../randomNumber");
+const util = require("../../utils");
 const nums = util.generateRandomNumbers(500, 10000);
-const myNums = [13,11,9,1,3,2508,456,7,8,21];
 
 function bubbleSort(array, order = 'ASC') {
   let size = array.length - 1;
@@ -16,6 +15,6 @@ function bubbleSort(array, order = 'ASC') {
 }
 
 console.time("Bubble")
-bubbleSort(myNums, 'DESC');
+bubbleSort(nums, 'DESC');
 console.timeEnd("Bubble")
-console.log(myNums)
+console.log(nums)

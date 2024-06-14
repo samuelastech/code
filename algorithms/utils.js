@@ -13,3 +13,4 @@ function generateRandomNumbers(max, size) {
 }
 
 exports.generateRandomNumbers = generateRandomNumbers;
+exports.myNums = [13,11,9,1,3,2508,456,7,8,21];

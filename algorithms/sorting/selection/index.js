@@ -1,4 +1,4 @@
-const util = require("../../randomNumber");
+const util = require("../../utils");
 const nums = util.generateRandomNumbers(500, 10000);
 
 /**
