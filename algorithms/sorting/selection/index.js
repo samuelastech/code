@@ -3,20 +3,28 @@ const nums = util.generateRandomNumbers(500, 10000);
 
 /**
  * 
- * @param {Array<number>} array
+ * @param {Array<number|string>} array
  * @param {string} order 
- * @returns 
+ * @returns {Array<number|string>}
  */
 function selectionSort(array, order = 'ASC') {
-  let sorted = [];
-  while (sorted.length < array.length) {
-    const minorIndex = array.indexOf(Math.min(...array));
-    const minor = array.splice(minorIndex, 1);
-    sorted = order === 'DESC' ? minor.concat(sorted) : sorted.concat(minor);
+  for (let i = 0; i < array.length; i++) {
+    let minIndex = i;
+    
+    for (let j = i + 1; j < array.length; j++) {
+      if (order === 'ASC' ? array[j] < array[minIndex] : array[j] > array[minIndex]) {
+        minIndex = j;
+      }
+    }
+    
+    if (minIndex !== i) {
+      [array[i], array[minIndex]] = [array[minIndex], array[i]];
+    }
   }
-  return sorted;
+  
+  return array;
 }
 
 console.time('Selection');
-selectionSort(nums)
+selectionSort(nums);
 console.timeEnd('Selection');
