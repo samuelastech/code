@@ -1,4 +1,4 @@
-const util = require("../../utils");
+const util = require("../../../utils");
 const nums = util.generateRandomNumbers(500, 10000);
 
 function bubbleSort(array, order = 'ASC') {

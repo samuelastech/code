@@ -1,4 +1,4 @@
-const { myNums, generateRandomNumbers } = require('../../utils');
+const { myNums, generateRandomNumbers } = require("../../../utils");
 const nums = generateRandomNumbers(500, 10000);
 
 function insertionSort(array, order = 'ASC') {
