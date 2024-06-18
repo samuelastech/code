@@ -5,6 +5,17 @@ const array = generateRandomNumbers();
 console.log("Original:", array, "\n");
 
 /**
+ * Reversing
+ */
+console.log("Reversed:", array.reverse(), "\n");
+let j = array.length-1;
+for (let i = 0; i <= j; i++) {
+  [array[i], array[j]] = [array[j], array[i]];
+  j--;
+}
+console.log("Reversed again:", array, "\n");
+
+/**
  * Sorting
  * if it's negative, A will be sorted before B  
  * if it's positive, B will be sorted before A

@@ -4,6 +4,26 @@ const { generateMatrix, matrixToString } = require('../../utils');
 const matrix = generateMatrix(4, 4);
 console.log("Original:", matrix, "\n");
 
+/** Reversing a row */
+matrix[1].reverse();
+console.log("Reversed row:", matrix, "\n");
+
+/** Reversing a column */
+function reverseColumn(matrix, columnIndex) {
+  let j = matrix.length - 1;
+  for (let i = 0; i <= j; i++) {
+    const spliced = matrix[i][columnIndex];
+    const opposite = matrix[j][columnIndex];
+
+    matrix[i].splice(columnIndex, 1, opposite);
+    matrix[j].splice(columnIndex, 1, spliced);
+    j--;
+  }
+
+  return matrix;
+}
+console.log("Reversed column:", reverseColumn(matrix, 0), "\n");
+
 /**
  * Gets a sub array
  * @param {Array<Array<number>>} matrix 
