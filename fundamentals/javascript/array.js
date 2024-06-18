@@ -14,3 +14,18 @@ const sortedArrayASC = array.toSorted((a, b) => a - b);
 const sortedArrayDESC = array.toSorted((a, b) => b - a);
 console.log("Sorted ASC:", sortedArrayASC, "\n");
 console.log("Sorted DESC:", sortedArrayDESC, "\n");
+
+/**
+ * Array constructor
+ */
+const array1 = new Array();
+console.log("Array constructor:", array1, "\n");
+
+const array2 = new Array(10);
+console.log("Array constructor - empty positions:", array2, "\n");
+
+/**
+ * Filling arrays
+ */
+array2.fill('Mortadela não tem "N"');
+console.log("Array filling:", array2, "\n");
