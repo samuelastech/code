@@ -1,4 +1,6 @@
-class Math {
+const { Shape } = require("./Shape");
+
+class Quadrilateral extends Shape {
   /**
    * Returns the area of a 4-sided shape
    * @param {number} length 
@@ -20,4 +22,4 @@ class Math {
   }
 }
 
-exports.Math = Math;
+exports.Quadrilateral = Quadrilateral;
