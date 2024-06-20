@@ -5,6 +5,30 @@ const array = generateRandomNumbers();
 console.log("Original:", array, "\n");
 
 /**
+ * Permuting
+ */
+function permute(array) {
+  const result = [];
+
+  if (array.length === 0) return [[]];
+
+  for (let i = 0; i < array.length; i++) {
+    const current = array.slice();
+    const next = current.splice(i, 1);
+    const permutations = permute(current);
+
+    for (const permutation of permutations) {
+      result.push(next.concat(permutation));
+    }
+  }
+
+  return result;
+}
+
+const arrayToPermute = generateRandomNumbers(10, 3);
+console.log("Permutation:", permute(arrayToPermute), "\n");
+
+/**
  * Reversing
  */
 console.log("Reversed:", array.reverse(), "\n");
