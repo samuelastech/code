@@ -15,3 +15,13 @@ regex = /(a|e|i|o|u)$/i;
 console.log("'Paranaue' ends with a vowel?", regex.test("Paranaue"));
 console.log("'Militar' ends with a vowel?", regex.test("Militar"));
 console.log("\n");
+
+/**
+ * Referencing a group
+ */
+regex = /^(a).*\1$/i;
+console.log("'Ana' starts and ends with 'A'?", regex.test("Ana"));
+
+regex = /^(a)(b).*\2$/i;
+console.log("'Abnab' ends with 'B'?", regex.test("Abnab"));
+console.log("\n");
