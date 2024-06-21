@@ -1,0 +1,17 @@
+let regex;
+
+/**
+ * Matching the start of a string
+ */
+regex = /^(a|e|i|o|u)/i;
+console.log("'Samuel' starts with a vowel?", regex.test("Samuel"));
+console.log("'Agora' starts with a vowel?", regex.test("Agora"));
+console.log("\n");
+
+/**
+ * Matching the end of a string
+ */
+regex = /(a|e|i|o|u)$/i;
+console.log("'Paranaue' ends with a vowel?", regex.test("Paranaue"));
+console.log("'Militar' ends with a vowel?", regex.test("Militar"));
+console.log("\n");
