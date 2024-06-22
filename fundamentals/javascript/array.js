@@ -1,7 +1,7 @@
 const { generateRandomNumbers } = require('../../utils');
 
 /** Array */
-const array = generateRandomNumbers();
+let array = generateRandomNumbers();
 console.log("Original:", array, "\n");
 
 /**
@@ -25,8 +25,8 @@ function permute(array) {
   return result;
 }
 
-const arrayToPermute = generateRandomNumbers(10, 3);
-console.log("Permutation:", permute(arrayToPermute), "\n");
+array = generateRandomNumbers(10, 3);
+console.log("Permutation:", permute(array), "\n");
 
 /**
  * Reversing
@@ -53,14 +53,25 @@ console.log("Sorted DESC:", sortedArrayDESC, "\n");
 /**
  * Array constructor
  */
-const array1 = new Array();
-console.log("Array constructor:", array1, "\n");
+array = new Array();
+console.log("Array constructor:", array, "\n");
 
-const array2 = new Array(10);
-console.log("Array constructor - empty positions:", array2, "\n");
+array = new Array(10);
+console.log("Array constructor - empty positions:", array, "\n");
 
 /**
  * Filling arrays
  */
-array2.fill('Mortadela não tem "N"');
-console.log("Array filling:", array2, "\n");
+array.fill('Mortadela não tem "N"');
+console.log("Array filling:", array, "\n");
+
+/** Reducing */
+
+array = generateRandomNumbers();
+console.log("Reducing:");
+const reduced = array.reduce((a, b, i, array) => {
+  console.log({ i, acumulator: a, current: b });
+  return a + b;
+}, 0);
+
+console.log("Reduced final:", reduced, "\n");
