@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IndexedDB</title>
+</head>
+<body>
+  <script>
+    /**
+     * This database is used to store large amount of web data
+    */
+    let connection = null;
+    const openRequest = window.indexedDB.open('databasename', 5);
+
+    openRequest.onupgradeneeded = (event) => {
+      console.log("Creates or updates an existent database");
+      connection = event.target.result;
+      
+      if (connection.objectStoreNames.contains('tablename')) {
+        connection.deleteObjectStore('tablename');
+      }
+
+      connection.createObjectStore('tablename', { autoIncrement: true });
+    }
+
+    openRequest.onsuccess = (event) => {
+      console.log("Connection was gained successfully");
+      connection = event.target.result;
+    };
+
+    openRequest.onerror = (event) => {
+      console.log("Error:", event.target.error);
+    };
+
+    function getStore (storeName, operationType = 'readwrite') {
+      const transaction = connection.transaction([storeName], operationType);
+      return transaction.objectStore(storeName);
+    }
+
+    function add() {
+      const store = getStore('tablename');
+      const person = { name: 'Vinicius', lastname: 'Souza', age: 22 };
+      const request = store.add(person);
+      request.onsuccess = () => console.log('Object was added successfully');
+      request.onerror = (event) => console.log(event.target.error);
+    }
+
+    function list() {
+      const store = getStore('tablename');
+      const cursor = store.openCursor();
+      const data = [];
+
+      cursor.onsuccess = (event) => {
+        const current = event.target.result;
+        if (current) {
+          data.push(current.value);
+          current.continue();
+        } 
+      }
+
+      cursor.onerror = (event) => console.log(event.target.error);
+
+      return data;
+    }
+
+  </script>
+</body>
+</html>
