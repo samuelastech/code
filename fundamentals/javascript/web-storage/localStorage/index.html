@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local Storage</title>
+  <style>
+    code {
+      color: red;
+      background-color: rgb(233, 233, 233);
+      padding: 1px 3px;
+      font-size: 0.70rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Local Storage</h1>
+  <p>Tap <code>F12</code> and se the results of the script in the <code>console</code> tab.</p>
+  <script>
+    /* Saving an item */
+    localStorage.setItem("name", "Samuel");
+
+    /* Getting the saved item */
+    console.log(localStorage.getItem("name"));
+
+    /* Getting the created keys */
+    console.log(localStorage.key(0));
+    console.log(localStorage.key(1));
+
+    /* Getting the amount of items created */
+    console.log(localStorage.length);
+  </script>
+</body>
+</html>
