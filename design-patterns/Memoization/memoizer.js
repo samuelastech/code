@@ -1,7 +1,7 @@
 export function useMemo(fn) {
   const cache = new Map();
 
-  return (...args) => {
+  const newFn = (...args) => {
     const key = JSON.stringify(args);
     if(cache.has(key)) {
       console.log('Getting a cached value...');
@@ -13,4 +13,7 @@ export function useMemo(fn) {
       return result;
     }
   }
+
+  newFn.release = () => cache.clear();
+  return newFn;
 }
