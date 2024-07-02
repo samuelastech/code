@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cache Storage</title>
+  <style>
+    code {
+      color: red;
+      background-color: rgb(233, 233, 233);
+      padding: 1px 3px;
+      font-size: 0.70rem;  
+    }
+  </style>
+</head>
+<body>
+  <h1>Cache Storage</h1>
+  <p>Tap <code>F12</code> and se the results of the script in the <code>console</code> tab.</p>
+  <script type="module">
+    const url = 'https://avatars.githubusercontent.com/u/40635204?v=4';
+    const cache = await caches.open('images');
+    const image = await cache.match(url);
+    if(image) {
+      const blob = await image.blob();
+      if(blob) {
+        insertIMG(blob);
+      }
+    } else {
+      const response = await fetch(url);
+      await cache.add(url);
+      insertIMG(response.blob());
+    }
+
+    function insertIMG(obj) {
+      const imgElement = document.createElement('img');
+      imgElement.src = URL.createObjectURL(obj);
+      document.body.appendChild(imgElement);
+    }
+  </script>
+</body>
+</html>
