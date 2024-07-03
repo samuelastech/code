@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SEO & Acessibility</title>
+  <style>
+    .code {
+      color: red;
+      background-color: #ebebeb;
+      padding: 1px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1 lang="en">Acessibility</h1>
+  <p>
+    Essa página contém o atributo <span class="code">lang</span> com o valor <span class="code">pt-br</span> pois o
+    conteúdo encotrado aqui está em português. No entanto, o título "Acessibility" contém um lang <span class="code">lang</span>
+    com um valor <span class="code">en</span> pois se trata de um texto em inglês. Isso auxilia alguns leitores de tela
+    na decisão do sotaque.
+  </p>
+  <h2>Tags semânticas sempre terão um caráter acessível</h2>
+  <h2>Imagens sempre devem ter um <span class="code">alt</span></h2>
+  <p>
+    Isso ajuda leitores de tela entender do que se trata uma imagem. Algumas imagens não precisam de um texto alternativo,
+    mesmo assim, utilize o atributo <span class="code">alt</span> sem um valor.
+  </p>
+  <img src="https://blog.cobasi.com.br/wp-content/uploads/2021/09/AdobeStock_284724918.webp" alt="Cachorro fofo em pé sobre um gramado verde" />
+  <h2>Elementos interativos devem ter um <span class="code">tabindex</span></h2>
+  <p>
+    Dessa forma, o usuário pode navegar pela web page pelo teclado. Por padrão, elementos interativos têm o
+    <span class="code">tabindex</span> igual a zero, assim, a navegação será feita do topo da página até o final.
+    É possível trocar a ordem de navegação no entanto (use o tab para trocar o foco dos elementos):
+  </p>
+  <ul>
+    <li tabindex="1">Item 1</li>
+    <li tabindex="3">Item 2</li>
+    <li tabindex="2">Item 3</li>
+  </ul>
+  <p>
+    Um link, por natureza, é um elemento interativo mas posso removê-lo da navegação pelo teclado com um
+    <span class="code">tabindex</span> igual a <span class="code">-1</span> (use o tab para trocar o foco dos elementos):
+  </p>
+  <ul>
+    <li><a href="#">Link acessível</a></li>
+    <li><a tabindex="-1" href="#">Link não acessível</a></li>
+  </ul>
+  
+</body>
+</html>
