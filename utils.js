@@ -3,7 +3,7 @@
  * @param {number} max size of the integer
  * @returns {number}
  */
-function getRandomInt(max = 100) {
+export function getRandomInt(max = 100) {
   return Math.floor(Math.random() * max);
 }
 
@@ -13,7 +13,7 @@ function getRandomInt(max = 100) {
  * @param {number} size is the length of the array
  * @returns {Array<number>}
  */
-function generateRandomNumbers(max = 100, size = 10) {
+export function generateRandomNumbers(max = 100, size = 10) {
   const nums = [];
   
   for (let i = 0; i < size; i++) {
@@ -29,7 +29,7 @@ function generateRandomNumbers(max = 100, size = 10) {
  * @param {number} n columns
  * @param {number} max value of each integer
  */
-function generateMatrix(m = 10, n = 10, max = 100) {
+export function generateMatrix(m = 10, n = 10, max = 100) {
   const matrix = [];
 
   for (let i = 0; i < m; i++) {
@@ -44,8 +44,3 @@ function generateMatrix(m = 10, n = 10, max = 100) {
 
   return matrix;
 }
-
-exports.getRandomInt = getRandomInt;
-exports.generateRandomNumbers = generateRandomNumbers;
-exports.generateMatrix = generateMatrix;
-exports.myNums = [13,11,9,1,3,2508,456,7,8,21];
