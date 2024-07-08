@@ -1,4 +1,4 @@
-const { generateRandomNumbers } = require('../../utils');
+import { generateRandomNumbers } from '../../utils.js';
 
 /** Array */
 let array = generateRandomNumbers();
@@ -66,7 +66,6 @@ array.fill('Mortadela não tem "N"');
 console.log("Array filling:", array, "\n");
 
 /** Reducing */
-
 array = generateRandomNumbers();
 console.log("Reducing:");
 const reduced = array.reduce((a, b, i, array) => {
@@ -75,3 +74,7 @@ const reduced = array.reduce((a, b, i, array) => {
 }, 0);
 
 console.log("Reduced final:", reduced, "\n");
+
+const reducedToRight = array.reduce((a, b) => a - b);
+const reducedFromRight = array.reduceRight((a, b) => a - b);
+console.log({reducedToRight, reducedFromRight})
