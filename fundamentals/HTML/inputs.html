@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inputs</title>
+</head>
+<body>
+  <form>
+    <h1>Different kinds of inputs</h1>
+    <label>
+      <span>Name</span>
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      <span>E-mail</span>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" name="password" required>
+    </label>
+    <label>
+      <span>Date of birth</span>
+      <input type="date" name="birth" required>
+    </label>
+    <label>
+      <span>Phone</span>
+      <input type="tel" name="phone" required>
+    </label>
+    <input type="submit">
+  </form>
+  <script>
+    const form = document.querySelector('form');
+    const fields = document.querySelectorAll('[name]');
+    
+    form.onsubmit = (event) => {
+      event.preventDefault();
+    }
+
+    fields.forEach((field) => {
+      field.oninvalid = (event) => event.preventDefault(); 
+      field.onblur = checkField;
+    });
+
+    function checkField(event) {
+      if(event.target.validity.valueMissing)
+        alert(`Field '${event.target.name}' cannot be missing`);
+    }
+  </script>
+</body>
+</html>
