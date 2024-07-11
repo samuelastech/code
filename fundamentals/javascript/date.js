@@ -17,3 +17,16 @@ switch (date.toString().slice(0, 3)) {
   case "Sat": console.log('Saturday');
     break;
 }
+
+date = date.toLocaleString('en', {
+  weekday: 'long',
+});
+
+/** Showing hour in the 00:00:00 format */
+date = date.toLocaleString('pt-Br', {
+  hour: '2-digit',
+  minute: '2-digit',
+  second: '2-digit',
+});
+
+console.log(date);
