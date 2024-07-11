@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Media</title>
+</head>
+<body>
+  <video width="320" height="240" autoplay data-video></video>
+  <script type="module">
+    const video = document.querySelector('[data-video]');
+    
+    const startVideo = await navigator.mediaDevices.getUserMedia({ audio: true, video: true });
+    video.srcObject = startVideo;
+  </script>
+</body>
+</html>
