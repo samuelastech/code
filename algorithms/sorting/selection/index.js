@@ -1,5 +1,5 @@
-const util = require("../../../utils");
-const nums = util.generateRandomNumbers(500, 10000);
+import { generateRandomNumbers } from "../../../utils.js";
+const nums = generateRandomNumbers(100, 10);
 
 /**
  * 
