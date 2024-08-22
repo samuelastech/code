@@ -1,7 +1,11 @@
 package variables;
 
 public class Variables {
+    static final byte PAIR = 2;
+
     static public void run() {
+        final byte LEAGUE_TEAMS = 20;
+
         byte byteIntNumber = 127;
         short shortIntNumber = 32_767;
         int intNumber = 2_147_483_647;
