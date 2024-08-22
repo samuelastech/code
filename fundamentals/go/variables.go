@@ -6,6 +6,11 @@ import (
 )
 
 func main() {
+		const (
+			Pi = 3.14
+			E  = 2.718
+		)
+
     // Tipos básicos
     var (
         i int = 42
