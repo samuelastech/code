@@ -13,6 +13,12 @@ public class MutualExclusion {
         count++;
     }
 
+    public void decrement() {
+        synchronized (this) {
+            count--;
+        }
+    }
+
     public int getCount() {
         return count;
     }
