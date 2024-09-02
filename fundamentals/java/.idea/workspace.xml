@@ -36,6 +36,7 @@
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "Application.Deadlock.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.Read.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
