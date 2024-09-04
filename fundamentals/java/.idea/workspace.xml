@@ -13,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Record" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -38,12 +38,13 @@
     "Application.Deadlock.executor": "Run",
     "Application.Fetch.executor": "Run",
     "Application.Main.executor": "Run",
+    "Application.MultiCatch.executor": "Run",
     "Application.MyArrayList.executor": "Run",
     "Application.Read.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/samuelastech/Downloads/gson-2.11.0.jar",
+    "last_opened_file_path": "C:/Users/samuelastech/Projects/series",
     "onboarding.tips.debug.path": "C:/Users/samuelastech/Projects/code/fundamentals/java/src/Main.java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
