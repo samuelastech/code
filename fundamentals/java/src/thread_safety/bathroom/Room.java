@@ -8,5 +8,8 @@ public class Room {
         new Thread(toilet::poop, "Harry").start();
         new Thread(toilet::piss, "Diogo").start();
         new Thread(toilet::piss, "Neymá").start();
+        var cleaner = new Thread(toilet::clean, "Diógenes");
+        cleaner.setDaemon(true);
+        cleaner.start();
     }
 }
