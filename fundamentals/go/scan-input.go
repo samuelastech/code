@@ -17,4 +17,9 @@ func main() {
 	fmt.Println("Weight:", weight)
 	fmt.Println("Name:", name)
 	fmt.Println("Initial:", string(gender))
+
+	var number int
+	fmt.Println("Enter a number:")
+	fmt.Scan(&number)
+	fmt.Println("That's your lucky number:", number)
 }
