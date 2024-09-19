@@ -2,11 +2,16 @@ package main
 
 import "fmt"
 
-func main() {
-	name, age := getPerson()
-	fmt.Println("Hi", name, "are you", age, "years old?")
+type Human struct {
+	name string
+	age  int
 }
 
-func getPerson() (string, int) {
-	return "Samuel", 22
+func (person *Human) Speak(content string) {
+	fmt.Println(person.name+":", content)
+}
+
+func main() {
+	person := Human{name: "Alemão", age: 22}
+	person.Speak("I loved you endlessly")
 }
